@@ -27,13 +27,13 @@ export default function Cart() {
     for (const { bookId, quantity } of rawCart) {
       try {
         const bookRes = await axios.get(
-          `http://localhost:8081/api/v1/products/${bookId}`,
+          `https://ebook-nvc-3.onrender.com/api/v1/products/${bookId}`,
           { headers: { Authorization: `Bearer ${user.token}` } }
         );
         const book = bookRes.data;
 
         const shopRes = await axios.get(
-          `http://localhost:8081/api/v1/shops/${book.shop_id}`,
+          `https://ebook-nvc-3.onrender.com/api/v1/shops/${book.shop_id}`,
           { headers: { Authorization: `Bearer ${user.token}` } }
         );
         const shop = shopRes.data;

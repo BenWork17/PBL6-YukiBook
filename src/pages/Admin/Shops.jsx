@@ -34,7 +34,7 @@ export default function Shops() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:8081/api/v1/shops?page=${page}&limit=${limit}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/shops?page=${page}&limit=${limit}`,
         getAuthHeader()
       );
       setShops(res.data);
@@ -54,7 +54,7 @@ export default function Shops() {
   const handleAddShop = async (shopData) => {
     try {
       await axios.post(
-        "http://localhost:8081/api/v1/shops",
+        "https://ebook-nvc-3.onrender.com/api/v1/shops",
         shopData,
         getAuthHeader()
       );
@@ -67,7 +67,7 @@ export default function Shops() {
   const handleEditShop = async (id, updatedData) => {
     try {
       await axios.put(
-        `http://localhost:8081/api/v1/shops/${id}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/shops/${id}`,
         updatedData,
         getAuthHeader()
       );
@@ -80,7 +80,7 @@ export default function Shops() {
   const handleDeleteShop = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:8081/api/v1/shops/${id}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/shops/${id}`,
         getAuthHeader()
       );
       fetchShops();

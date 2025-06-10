@@ -20,7 +20,7 @@ export default function Orders() {
       try {
         setLoading(true);
         const res = await axios.get(
-          `http://localhost:8081/api/v1/orders/user/${user.user_id}`,
+          `https://ebook-nvc-3.onrender.com/api/v1/orders/user/${user.user_id}`,
           getAuthHeader()
         );
         setOrders(res.data);

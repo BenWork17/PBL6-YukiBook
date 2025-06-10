@@ -24,7 +24,7 @@ export default function Checkout() {
     }
 
     axios
-      .get(`http://localhost:8081/api/v1/users/${user.user_id}`, {
+      .get(`https://ebook-nvc-3.onrender.com/api/v1/users/${user.user_id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       })
       .then((res) => setUserInfo(res.data))
@@ -70,7 +70,7 @@ export default function Checkout() {
       };
 
       const orderRes = await axios.post(
-        "http://localhost:8081/api/v1/orders",
+        "https://ebook-nvc-3.onrender.com/api/v1/orders",
         orderData,
         getAuthHeader()
       );
@@ -82,7 +82,7 @@ export default function Checkout() {
       for (const { bookId, quantity } of rawCart) {
         // Lấy giá sách để tính chi tiết
         const bookRes = await axios.get(
-          `http://localhost:8081/api/v1/products/${bookId}`,
+          `https://ebook-nvc-3.onrender.com/api/v1/products/${bookId}`,
           getAuthHeader()
         );
         const price = bookRes.data.price;
@@ -96,7 +96,7 @@ export default function Checkout() {
         };
 
         await axios.post(
-          "http://localhost:8081/api/v1/order_details",
+          "https://ebook-nvc-3.onrender.com/api/v1/order_details",
           detailData,
           getAuthHeader()
         );
@@ -108,7 +108,7 @@ export default function Checkout() {
       // Điều hướng tiếp theo tùy phương thức thanh toán
       if (paymentMethod === "vnpay") {
         const response = await axios.get(
-          `http://localhost:8081/api/v1/payments/create-payment?amount=${totalAmount}`,
+          `https://ebook-nvc-3.onrender.com/api/v1/payments/create-payment?amount=${totalAmount}`,
           getAuthHeader()
         );
 

@@ -18,7 +18,7 @@ export default function Section2() {
       try {
         setLoading(true);
         const res = await axios.get(
-          "http://localhost:8081/api/v1/products?page=0&limit=5"
+          "https://ebook-nvc-3.onrender.com/api/v1/products?page=0&limit=5"
         );
         setFlashDeals(res.data.product);
         setError(null);

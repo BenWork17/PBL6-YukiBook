@@ -21,7 +21,7 @@ export default function CheckoutSuccess() {
     const updateOrderStatus = async () => {
       try {
         await axios.put(
-          `http://localhost:8081/api/v1/orders/${orderId}`,
+          `https://ebook-nvc-3.onrender.com/api/v1/orders/${orderId}`,
           { ...orderData, status: "paid" },
           { headers: { Authorization: `Bearer ${user.token}` } }
         );

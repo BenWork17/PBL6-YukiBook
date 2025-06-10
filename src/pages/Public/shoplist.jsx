@@ -21,7 +21,7 @@ export default function ShopList() {
       setLoading(true);
       setError(null);
       try {
-        const res = await axios.get("http://localhost:8081/api/v1/shops", {
+        const res = await axios.get("https://ebook-nvc-3.onrender.com/api/v1/shops", {
           params: { page, limit },
           headers: token
             ? { Authorization: `Bearer ${token}` }

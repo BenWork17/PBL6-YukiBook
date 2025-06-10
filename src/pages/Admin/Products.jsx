@@ -20,7 +20,7 @@ export default function Products() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:8081/api/v1/products?page=${page}&limit=${limit}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/products?page=${page}&limit=${limit}`,
         getAuthHeader()
       );
       // API trả về { product: [...], totalPage: N }
@@ -41,7 +41,7 @@ export default function Products() {
   const handleAddProduct = async (productData) => {
     try {
       await axios.post(
-        "http://localhost:8081/api/v1/products",
+        "https://ebook-nvc-3.onrender.com/api/v1/products",
         productData,
         getAuthHeader()
       );
@@ -54,7 +54,7 @@ export default function Products() {
   const handleEditProduct = async (id, updatedData) => {
     try {
       await axios.put(
-        `http://localhost:8081/api/v1/products/${id}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/products/${id}`,
         updatedData,
         getAuthHeader()
       );
@@ -67,7 +67,7 @@ export default function Products() {
   const handleDeleteProduct = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:8081/api/v1/products/${id}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/products/${id}`,
         getAuthHeader()
       );
       fetchProducts();

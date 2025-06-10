@@ -30,7 +30,7 @@ export default function Categories() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:8081/api/v1/categories?page=${page}&limit=${limit}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/categories?page=${page}&limit=${limit}`,
         authHeader
       );
       setCategories(res.data);
@@ -51,13 +51,13 @@ export default function Categories() {
     try {
       if (isEdit) {
         await axios.put(
-          `http://localhost:8081/api/v1/categories/${currentCat.id}`,
+          `https://ebook-nvc-3.onrender.com/api/v1/categories/${currentCat.id}`,
           { name: currentCat.name },
           authHeader
         );
       } else {
         await axios.post(
-          `http://localhost:8081/api/v1/categories`,
+          `https://ebook-nvc-3.onrender.com/api/v1/categories`,
           { name: currentCat.name },
           authHeader
         );
@@ -73,7 +73,7 @@ export default function Categories() {
     if (!window.confirm("Bạn có chắc muốn xóa danh mục này?")) return;
     try {
       await axios.delete(
-        `http://localhost:8081/api/v1/categories/${id}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/categories/${id}`,
         authHeader
       );
       fetchCategories();
