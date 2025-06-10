@@ -19,11 +19,11 @@ export default function useProducts() {
     setLoading(true);
     try {
       const shopRes = await axios.get(
-        `https://ebook-nvc-3.onrender.com/api/v1/shops/user/${user.user_id}`,
+        `http://ebook-nvc-3.onrender.com/api/v1/shops/user/${user.user_id}`,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
       const prodRes = await axios.get(
-        `https://ebook-nvc-3.onrender.com/api/v1/products/shop/${shopRes.data.id}`,
+        `http://ebook-nvc-3.onrender.com/api/v1/products/shop/${shopRes.data.id}`,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
       setProducts(prodRes.data);

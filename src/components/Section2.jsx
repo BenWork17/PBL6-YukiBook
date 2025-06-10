@@ -18,7 +18,7 @@ export default function Section2() {
       try {
         setLoading(true);
         const res = await axios.get(
-          "https://18.183.63.50:8080/api/v1/products?page=0&limit=5"
+          "http://18.183.63.50:8080/api/v1/products?page=0&limit=5"
         );
         setFlashDeals(res.data.product);
         setError(null);

@@ -20,7 +20,7 @@ export default function Products() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `https://18.183.63.50:8080/api/v1/products?page=${page}&limit=${limit}`,
+        `http://18.183.63.50:8080/api/v1/products?page=${page}&limit=${limit}`,
         getAuthHeader()
       );
       // API trả về { product: [...], totalPage: N }
@@ -41,7 +41,7 @@ export default function Products() {
   const handleAddProduct = async (productData) => {
     try {
       await axios.post(
-        "https://18.183.63.50:8080/api/v1/products",
+        "http://18.183.63.50:8080/api/v1/products",
         productData,
         getAuthHeader()
       );
@@ -54,7 +54,7 @@ export default function Products() {
   const handleEditProduct = async (id, updatedData) => {
     try {
       await axios.put(
-        `https://18.183.63.50:8080/api/v1/products/${id}`,
+        `http://18.183.63.50:8080/api/v1/products/${id}`,
         updatedData,
         getAuthHeader()
       );

@@ -82,7 +82,7 @@ export default function Checkout() {
       for (const { bookId, quantity } of rawCart) {
         // Lấy giá sách để tính chi tiết
         const bookRes = await axios.get(
-          `https://18.183.63.50:8080/api/v1/products/${bookId}`,
+          `http://18.183.63.50:8080/api/v1/products/${bookId}`,
           getAuthHeader()
         );
         const price = bookRes.data.price;

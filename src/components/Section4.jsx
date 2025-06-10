@@ -13,7 +13,7 @@ export default function Section4() {
       try {
         setLoading(true);
         const res = await axios.get(
-          "https://18.183.63.50:8080/api/v1/products?page=2&limit=5"
+          "http://18.183.63.50:8080/api/v1/products?page=2&limit=5"
         );
         setDealOfTheWeek(res.data.product);
         setError(null);
