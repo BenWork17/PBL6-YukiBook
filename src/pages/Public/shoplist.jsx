@@ -21,7 +21,7 @@ export default function ShopList() {
       setLoading(true);
       setError(null);
       try {
-        const res = await axios.get("http://localhost:8081/api/v1/shops", {
+        const res = await axios.get("http://18.183.63.50:8081/api/v1/shops", {
           params: { page, limit },
           headers: token
             ? { Authorization: `Bearer ${token}` }

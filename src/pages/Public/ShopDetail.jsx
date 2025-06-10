@@ -20,16 +20,16 @@ export default function ShopDetail() {
       try {
         const headers = { Authorization: `Bearer ${user.token}` }
         // Lấy info shop
-        const shopRes = await axios.get(`http://localhost:8081/api/v1/shops/${id}`, { headers })
+        const shopRes = await axios.get(`http://18.183.63.50:8081/api/v1/shops/${id}`, { headers })
         setShop(shopRes.data)
 
         // Lấy products của shop dưới dạng mảng
-        const prodRes = await axios.get(`http://localhost:8081/api/v1/products/shop/${id}`, { headers })
+        const prodRes = await axios.get(`http://18.183.63.50:8081/api/v1/products/shop/${id}`, { headers })
         const prods = prodRes.data || []
         setProducts(prods)
 
         // Lấy categories để lọc
-        const catRes = await axios.get(`http://localhost:8081/api/v1/categories?page=1&limit=100`, { headers })
+        const catRes = await axios.get(`http://18.183.63.50:8081/api/v1/categories?page=1&limit=100`, { headers })
         const allCats = catRes.data || []
         const usedCats = allCats.filter((c) => prods.some((p) => p.category_id === c.id))
         setCategories(usedCats)

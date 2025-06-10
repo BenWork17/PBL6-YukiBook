@@ -24,7 +24,7 @@ export default function Checkout() {
     }
 
     axios
-      .get(`http://localhost:8081/api/v1/users/${user.user_id}`, {
+      .get(`http://18.183.63.50:8081/api/v1/users/${user.user_id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       })
       .then((res) => setUserInfo(res.data))
@@ -63,14 +63,14 @@ export default function Checkout() {
         phone_number: userInfo.phoneNumber,
         address: userInfo.address,
         notes: "Giao ebook nhanh",
-        status: "pending",
+        status: "paid",
         total_money: totalAmount,
         payment_method: paymentMethod,
         active: true,
       };
 
       const orderRes = await axios.post(
-        "http://localhost:8081/api/v1/orders",
+        "http://18.183.63.50:8081/api/v1/orders",
         orderData,
         getAuthHeader()
       );
@@ -96,7 +96,7 @@ export default function Checkout() {
         };
 
         await axios.post(
-          "http://localhost:8081/api/v1/order_details",
+          "http://18.183.63.50:8081/api/v1/order_details",
           detailData,
           getAuthHeader()
         );
@@ -108,7 +108,7 @@ export default function Checkout() {
       // Điều hướng tiếp theo tùy phương thức thanh toán
       if (paymentMethod === "vnpay") {
         const response = await axios.get(
-          `http://localhost:8081/api/v1/payments/create-payment?amount=${totalAmount}`,
+          `http://18.183.63.50:8081/api/v1/payments/create-payment?amount=${totalAmount}`,
           getAuthHeader()
         );
 

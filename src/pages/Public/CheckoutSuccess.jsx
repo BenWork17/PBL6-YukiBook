@@ -21,7 +21,7 @@ export default function CheckoutSuccess() {
     const updateOrderStatus = async () => {
       try {
         await axios.put(
-          `http://localhost:8081/api/v1/orders/${orderId}`,
+          `http://18.183.63.50:8081/api/v1/orders/${orderId}`,
           { ...orderData, status: "paid" },
           { headers: { Authorization: `Bearer ${user.token}` } }
         );

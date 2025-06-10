@@ -41,7 +41,7 @@ export default function useProducts() {
       console.log("User ID:", user.user_id);
       console.log("User Token:", user.token);
 
-      await axios.delete(`http://localhost:8081/api/v1/products/${id}`, {
+      await axios.delete(`http://18.183.63.50:8081/api/v1/products/${id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setProducts((prev) => prev.filter((p) => p.id !== id));
@@ -57,7 +57,7 @@ export default function useProducts() {
       console.log("User Token:", user.token);
 
       await axios.put(
-        `http://localhost:8081/api/v1/products/${id}`,
+        `http://18.183.63.50:8081/api/v1/products/${id}`,
         updates,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
@@ -76,7 +76,7 @@ export default function useProducts() {
       console.log("User Token:", user.token);
 
       const { data } = await axios.post(
-        `http://localhost:8081/api/v1/products`,
+        `http://18.183.63.50:8081/api/v1/products`,
         newProd,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

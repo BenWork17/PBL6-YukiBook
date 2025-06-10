@@ -20,7 +20,7 @@ export default function Orders() {
       try {
         setLoading(true);
         const res = await axios.get(
-          `http://localhost:8081/api/v1/orders/user/${user.user_id}`,
+          `http://18.183.63.50:8081/api/v1/orders/user/${user.user_id}`,
           getAuthHeader()
         );
         setOrders(res.data);

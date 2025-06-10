@@ -29,7 +29,7 @@ export default function Products() {
   // Load danh mục
   useEffect(() => {
     axios
-      .get("http://localhost:8081/api/v1/categories?page=1&limit=10")
+      .get("http://18.183.63.50:8081/api/v1/categories?page=1&limit=10")
       .then(({ data }) => setCategories(data))
       .catch(console.error);
   }, []);

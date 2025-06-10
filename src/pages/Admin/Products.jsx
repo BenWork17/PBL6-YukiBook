@@ -67,7 +67,7 @@ export default function Products() {
   const handleDeleteProduct = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:8081/api/v1/products/${id}`,
+        `http://18.183.63.50:8081/api/v1/products/${id}`,
         getAuthHeader()
       );
       fetchProducts();
