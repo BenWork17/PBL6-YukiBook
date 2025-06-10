@@ -24,13 +24,13 @@ export default function BookDetail() {
     const fetchDetail = async () => {
       try {
         const res = await axios.get(
-          `http://18.183.63.50:8081/api/v1/products/${id}`,
+          `http://18.183.63.50:8080/api/v1/products/${id}`,
           { headers: { Authorization: `Bearer ${user.token}` } }
         );
         setBook(res.data);
 
         const shopRes = await axios.get(
-          `http://18.183.63.50:8081/api/v1/shops/${res.data.shop_id}`,
+          `http://18.183.63.50:8080/api/v1/shops/${res.data.shop_id}`,
           { headers: { Authorization: `Bearer ${user.token}` } }
         );
         setShop(shopRes.data);

@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async ({ phone_number, password, role_id }) => {
     try {
-      const res = await axios.post("http://localhost:8081/api/v1/users/login", {
+      const res = await axios.post("https://18.183.63.50:8080/api/v1/users/login", {
         phone_number,
         password,
         role_id,
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (payload) => {
     try {
-      const res = await axios.post("http://localhost:8081/api/v1/users/register", payload)
+      const res = await axios.post("https://18.183.63.50:8080/api/v1/users/register", payload)
       const user = res.data.user
 
       await login({

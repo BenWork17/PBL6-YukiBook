@@ -18,7 +18,7 @@ export default function Section5() {
       try {
         setLoading(true);
         const res = await axios.get(
-          "http://localhost:8081/api/v1/products?page=3&limit=5"
+          "https://18.183.63.50:8080/api/v1/products?page=3&limit=5"
         );
         setHotDeals(res.data.product);
         setError(null);

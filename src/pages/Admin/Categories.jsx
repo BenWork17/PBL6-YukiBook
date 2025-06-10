@@ -30,7 +30,7 @@ export default function Categories() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://18.183.63.50:8081/api/v1/categories?page=${page}&limit=${limit}`,
+        `http://18.183.63.50:8080/api/v1/categories?page=${page}&limit=${limit}`,
         authHeader
       );
       setCategories(res.data);
@@ -51,13 +51,13 @@ export default function Categories() {
     try {
       if (isEdit) {
         await axios.put(
-          `http://18.183.63.50:8081/api/v1/categories/${currentCat.id}`,
+          `http://18.183.63.50:8080/api/v1/categories/${currentCat.id}`,
           { name: currentCat.name },
           authHeader
         );
       } else {
         await axios.post(
-          `http://18.183.63.50:8081/api/v1/categories`,
+          `http://18.183.63.50:8080/api/v1/categories`,
           { name: currentCat.name },
           authHeader
         );
@@ -73,7 +73,7 @@ export default function Categories() {
     if (!window.confirm("Bạn có chắc muốn xóa danh mục này?")) return;
     try {
       await axios.delete(
-        `http://18.183.63.50:8081/api/v1/categories/${id}`,
+        `http://18.183.63.50:8080/api/v1/categories/${id}`,
         authHeader
       );
       fetchCategories();

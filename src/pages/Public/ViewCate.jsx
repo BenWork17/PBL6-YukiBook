@@ -36,7 +36,8 @@ export default function BooksByCategory() {
     if (isAuthLoading || !user?.token) return;
     axios
       .get(
-        "http://18.183.63.50:8081/api/v1/categories?page=1&limit=30",
+        "http://18.183.63.50:8080/api/v1/categories?page=1&limit=30",
+
         { headers: { Authorization: `Bearer ${user.token}` } }
       )
       .then(res => {
@@ -53,7 +54,8 @@ export default function BooksByCategory() {
       setLoading(true);
       axios
         .get(
-          `http://18.183.63.50:8081/api/v1/products/search?keyword=${encodeURIComponent(keywordParam)}`,
+          `http://18.183.63.50:8080/api/v1/products/search?keyword=${encodeURIComponent(keywordParam)}`,
+
           { headers: { Authorization: `Bearer ${user.token}` } }
         )
         .then(res => {
@@ -78,7 +80,7 @@ export default function BooksByCategory() {
     setLoading(true);
     axios
       .get(
-        `http://18.183.63.50:8081/api/v1/products?page=${currentPage}&limit=30`,
+        `http://18.183.63.50:8080/api/v1/products?page=${currentPage}&limit=30`,
         { headers: { Authorization: `Bearer ${user.token}` } }
       )
       .then(res => {

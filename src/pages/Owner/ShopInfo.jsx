@@ -21,7 +21,7 @@ export default function ShopInfo() {
       try {
         const token = JSON.parse(localStorage.getItem("bookstore-user"))?.token;
 
-        const res = await axios.get(`http://18.183.63.50:8081/api/v1/shops/${shopId}`, {
+        const res = await axios.get(`http://18.183.63.50:8080/api/v1/shops/${shopId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

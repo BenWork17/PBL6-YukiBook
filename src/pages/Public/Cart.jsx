@@ -27,13 +27,14 @@ export default function Cart() {
     for (const { bookId, quantity } of rawCart) {
       try {
         const bookRes = await axios.get(
-          `http://18.183.63.50:8081/api/v1/products/${bookId}`,
+          `http://18.183.63.50:8080/api/v1/products/${bookId}`,
+
           { headers: { Authorization: `Bearer ${user.token}` } }
         );
         const book = bookRes.data;
 
         const shopRes = await axios.get(
-          `http://18.183.63.50:8081/api/v1/shops/${book.shop_id}`,
+          `http://18.183.63.50:8080/api/v1/shops/${book.shop_id}`,
           { headers: { Authorization: `Bearer ${user.token}` } }
         );
         const shop = shopRes.data;

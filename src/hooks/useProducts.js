@@ -19,11 +19,11 @@ export default function useProducts() {
     setLoading(true);
     try {
       const shopRes = await axios.get(
-        `http://localhost:8081/api/v1/shops/user/${user.user_id}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/shops/user/${user.user_id}`,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
       const prodRes = await axios.get(
-        `http://localhost:8081/api/v1/products/shop/${shopRes.data.id}`,
+        `https://ebook-nvc-3.onrender.com/api/v1/products/shop/${shopRes.data.id}`,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
       setProducts(prodRes.data);
@@ -41,7 +41,7 @@ export default function useProducts() {
       console.log("User ID:", user.user_id);
       console.log("User Token:", user.token);
 
-      await axios.delete(`http://18.183.63.50:8081/api/v1/products/${id}`, {
+      await axios.delete(`http://18.183.63.50:80810/api/v1/products/${id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setProducts((prev) => prev.filter((p) => p.id !== id));
@@ -57,7 +57,7 @@ export default function useProducts() {
       console.log("User Token:", user.token);
 
       await axios.put(
-        `http://18.183.63.50:8081/api/v1/products/${id}`,
+        `http://18.183.63.50:8080/api/v1/products/${id}`,
         updates,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
@@ -76,7 +76,7 @@ export default function useProducts() {
       console.log("User Token:", user.token);
 
       const { data } = await axios.post(
-        `http://18.183.63.50:8081/api/v1/products`,
+        `http://18.183.63.50:8080/api/v1/products`,
         newProd,
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

@@ -64,7 +64,7 @@ export default function Profile() {
       try {
         setLoading(true)
         // Replace with your actual API call
-        // const res = await fetch(`http://localhost:8081/api/v1/users/${user.user_id}`, {
+        // const res = await fetch(`https://ebook-nvc-3.onrender.com/api/v1/users/${user.user_id}`, {
         //   headers: { Authorization: `Bearer ${user.token}` }
         // })
         // const data = await res.json()

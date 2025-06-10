@@ -34,7 +34,7 @@ export default function Shops() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://18.183.63.50:8081/api/v1/shops?page=${page}&limit=${limit}`,
+        `http://18.183.63.50:8080/api/v1/shops?page=${page}&limit=${limit}`,
         getAuthHeader()
       );
       setShops(res.data);
@@ -54,7 +54,7 @@ export default function Shops() {
   const handleAddShop = async (shopData) => {
     try {
       await axios.post(
-        "http://18.183.63.50:8081/api/v1/shops",
+        "http://18.183.63.50:8080/api/v1/shops",
         shopData,
         getAuthHeader()
       );
@@ -67,7 +67,7 @@ export default function Shops() {
   const handleEditShop = async (id, updatedData) => {
     try {
       await axios.put(
-        `http://18.183.63.50:8081/api/v1/shops/${id}`,
+        `http://18.183.63.50:8080/api/v1/shops/${id}`,
         updatedData,
         getAuthHeader()
       );

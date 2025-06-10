@@ -24,7 +24,7 @@ export default function Checkout() {
     }
 
     axios
-      .get(`http://18.183.63.50:8081/api/v1/users/${user.user_id}`, {
+      .get(`http://18.183.63.50:8080/api/v1/users/${user.user_id}`, {
         headers: { Authorization: `Bearer ${user.token}` },
       })
       .then((res) => setUserInfo(res.data))
@@ -70,7 +70,7 @@ export default function Checkout() {
       };
 
       const orderRes = await axios.post(
-        "http://18.183.63.50:8081/api/v1/orders",
+        "http://18.183.63.50:8080/api/v1/orders",
         orderData,
         getAuthHeader()
       );
@@ -82,7 +82,7 @@ export default function Checkout() {
       for (const { bookId, quantity } of rawCart) {
         // Lấy giá sách để tính chi tiết
         const bookRes = await axios.get(
-          `http://localhost:8081/api/v1/products/${bookId}`,
+          `https://18.183.63.50:8080/api/v1/products/${bookId}`,
           getAuthHeader()
         );
         const price = bookRes.data.price;
@@ -96,7 +96,7 @@ export default function Checkout() {
         };
 
         await axios.post(
-          "http://18.183.63.50:8081/api/v1/order_details",
+          "http://18.183.63.50:8080/api/v1/order_details",
           detailData,
           getAuthHeader()
         );
@@ -108,7 +108,7 @@ export default function Checkout() {
       // Điều hướng tiếp theo tùy phương thức thanh toán
       if (paymentMethod === "vnpay") {
         const response = await axios.get(
-          `http://18.183.63.50:8081/api/v1/payments/create-payment?amount=${totalAmount}`,
+          `http://18.183.63.50:8080/api/v1/payments/create-payment?amount=${totalAmount}`,
           getAuthHeader()
         );
 

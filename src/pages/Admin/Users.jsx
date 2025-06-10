@@ -37,7 +37,7 @@ export default function Users() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://18.183.63.50:8081/api/v1/users?page=${page}&limit=${limit}`,
+        `http://18.183.63.50:8080/api/v1/users?page=${page}&limit=${limit}`,
         getAuthHeader()
       );
       setUsers(res.data);
@@ -57,7 +57,7 @@ export default function Users() {
   const handleAddUser = async (userData) => {
     try {
       await axios.post(
-        "http://18.183.63.50:8081/api/v1/users",
+        "http://18.183.63.50:8080/api/v1/users",
         userData,
         getAuthHeader()
       );
@@ -70,7 +70,7 @@ export default function Users() {
   const handleEditUser = async (id, updatedData) => {
     try {
       await axios.put(
-        `http://18.183.63.50:8081/api/v1/users/${id}`,
+        `http://18.183.63.50:8080/api/v1/users/${id}`,
         updatedData,
         getAuthHeader()
       );
@@ -83,7 +83,7 @@ export default function Users() {
   const handleDeleteUser = async (id) => {
     try {
       await axios.delete(
-        `http://18.183.63.50:8081/api/v1/users/${id}`,
+        `http://18.183.63.50:8080/api/v1/users/${id}`,
         getAuthHeader()
       );
       fetchUsers();
