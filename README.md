@@ -1,6 +1,6 @@
 # YukiBook Bookstore Website
 
-The **YukiBook Bookstore System** is a web-based platform built using **Java Servlet & JSP** to manage bookstore operations, facilitate book purchases, and streamline interactions between readers, publishers, and administrators. It ensures efficient book management, secure transactions, and role-based access control. (Hệ thống cửa hàng sách YukiBook)
+The **YukiBook Bookstore System** is a web-based platform built using **React JS and Tailwindcss with Vite** to manage bookstore operations, facilitate book purchases, and streamline interactions between readers, publishers, and administrators. It ensures efficient book management, secure transactions, and role-based access control. (Hệ thống cửa hàng sách YukiBook)
 
 
 
