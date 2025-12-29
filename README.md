@@ -2,6 +2,9 @@
 
 The **YukiBook Bookstore System** is a web-based platform built using **React JS and Tailwindcss with Vite** to manage bookstore operations, facilitate book purchases, and streamline interactions between readers, publishers, and administrators. It ensures efficient book management, secure transactions, and role-based access control. (Hệ thống cửa hàng sách YukiBook)
 
+## DEMO web :
+[DEMO web](https://drive.google.com/file/d/1QEpG5TMGJW_r76b6N9qGV_CP-qcvfa72/view?usp=sharing)
+
 
 
 ## 🚀 Features
